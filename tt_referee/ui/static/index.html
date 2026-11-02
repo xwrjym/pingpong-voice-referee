@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>乒乓球智能裁判</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="stage">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span id="title">乒乓球智能裁判</span>
+      </div>
+      <div class="match-meta">
+        <span id="set-label">第 1 局</span>
+        <span class="sep">·</span>
+        <span id="format">五局三胜</span>
+      </div>
+      <div class="status" id="status">比赛进行中</div>
+    </header>
+
+    <main class="scoreboard">
+      <section class="player" id="player-a">
+        <div class="side-tag" id="side-a">左半台</div>
+        <div class="name" id="name-a">选手 A</div>
+        <div class="points" id="points-a">0</div>
+        <div class="serve" id="serve-a"><span class="ball"></span>发球</div>
+      </section>
+
+      <div class="center">
+        <div class="colon">:</div>
+        <div class="sets-caption">局分</div>
+        <div class="sets"><b id="sets-a">0</b><span class="set-sep">:</span><b id="sets-b">0</b></div>
+      </div>
+
+      <section class="player" id="player-b">
+        <div class="side-tag" id="side-b">右半台</div>
+        <div class="name" id="name-b">选手 B</div>
+        <div class="points" id="points-b">0</div>
+        <div class="serve" id="serve-b"><span class="ball"></span>发球</div>
+      </section>
+    </main>
+
+    <div class="meta-strip" id="meta-strip"></div>
+    <div class="flags" id="flags"></div>
+    <div class="pending" id="pending" hidden></div>
+
+    <footer>
+      <div class="recent" id="recent"></div>
+      <div class="demo" id="demo" hidden>
+        <button data-demo="award?side=A">A +1</button>
+        <button data-demo="award?side=B">B +1</button>
+        <button data-demo="undo">撤销</button>
+        <button data-demo="redo">重做</button>
+        <button data-demo="pending">待确认</button>
+        <button data-demo="confirm">确认</button>
+        <button data-demo="reject">取消</button>
+        <button data-demo="reset" class="danger">重置</button>
+      </div>
+    </footer>
+
+    <div class="offline" id="offline" hidden>正在连接计分服务…</div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

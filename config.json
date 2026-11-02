@@ -1,0 +1,79 @@
+{
+  "sample_rate": 16000,
+  "block_ms": 100,
+  "engine": "vosk",
+  "self_side": "left",
+  "model_dir": "models/vosk-model-small-cn-0.22",
+  "dtw_model": "models/dtw_cn/templates.npz",
+  "dtw_wake_threshold": 1.6,
+  "dtw_command_threshold": 1.6,
+  "dtw_end_silence_ms": 400,
+  "dtw_max_segment_ms": 3000,
+  "dtw_min_segment_ms": 250,
+  "dtw_margin": 1.2,
+  "dtw_metric": "cosine",
+
+  "wake_words": ["小裁判"],
+  "wake_mode": "grammar",
+  "wake_threshold": 0.80,
+  "wake_margin": 0.05,
+  "wake_allow_missing_onset": false,
+
+  "command_mode": "grammar",
+  "match_threshold": 0.75,
+  "match_margin": 0.04,
+  "asr_conf_min": 0.0,
+
+  "commands": [
+    {
+      "intent": "score_left",
+      "phrases": ["左方加一分", "左边加一分", "左方加分", "左加一分", "左面加一分"]
+    },
+    {
+      "intent": "score_right",
+      "phrases": ["右方加一分", "右边加一分", "右方加分", "右加一分", "右面加一分"]
+    },
+    {
+      "intent": "score_self",
+      "phrases": ["我加一分", "给我加一分", "这分算我的", "我方加一分"]
+    },
+    {
+      "intent": "score_other",
+      "phrases": ["对方加一分", "给他加一分", "对面加一分", "对方得分"]
+    },
+    {
+      "intent": "undo",
+      "phrases": ["撤销上一分", "撤销一分", "撤销", "回退一分", "去掉上一分", "刚才不算", "这分不算"]
+    },
+    {
+      "intent": "reset",
+      "phrases": ["重置比分", "重置分数", "比分清零", "重新开始记分", "重新计分", "重来"]
+    },
+    {
+      "intent": "confirm",
+      "phrases": ["确认这一分", "确认得分", "确认一分", "确认", "没错"]
+    },
+    {
+      "intent": "report",
+      "phrases": ["报分", "现在比分", "当前比分", "比分多少", "现在几比几", "我几比几", "现在多少分"]
+    },
+    {
+      "intent": "dismiss",
+      "phrases": ["退出", "取消操作", "结束", "不用了", "暂停", "先不打了"]
+    }
+  ],
+
+  "listen_timeout_s": 6.0,
+  "no_speech_timeout_s": 3.0,
+  "max_commands_per_wake": 3,
+  "max_reask": 1,
+  "reask_on_reject": true,
+  "reset_confirm_timeout_s": 8.0,
+  "wake_tolerant_s": 3.0,
+
+  "vad_start_db": -42.0,
+  "vad_margin_db": 8.0,
+
+  "persist_state": "runtime/score_state.json",
+  "event_log": "runtime/events.jsonl"
+}

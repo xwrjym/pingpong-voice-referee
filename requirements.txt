@@ -1,0 +1,10 @@
+﻿# NOTE: keep this file ASCII-only. pip decodes a BOM-less requirements file with
+# the system locale encoding (GBK on Chinese Windows), and non-ASCII comments
+# make it crash before installing anything.
+numpy>=1.24
+pypinyin>=0.51
+sounddevice>=0.4.6
+
+# Default ASR backend (config.json -> engine = "vosk"). The 42MB Chinese model is
+# downloaded by tools/download_model.py or shipped inside the transfer bundle.
+vosk>=0.3.45
