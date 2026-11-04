@@ -287,30 +287,38 @@ body.compact .recent,
 body.compact .demo { display: none !important; }
 
 /* ---------------------------------------------------------------- 自适应覆盖 */
-.topbar { font-size: clamp(11px, 1.9vmin, 20px); }
-.name { font-size: clamp(13px, 2.6vmin, 30px); }
-.points { font-size: clamp(56px, 26vmin, 240px); }
-.serve { font-size: clamp(11px, 1.8vmin, 20px); }
-.colon { font-size: clamp(40px, 10vmin, 120px); }
-.sets { font-size: clamp(14px, 2.6vmin, 26px); }
-.chip { font-size: clamp(11px, 1.8vmin, 19px); }
-.pending { font-size: clamp(12px, 2vmin, 21px); }
+.topbar { font-size: clamp(15px, 2.2vmin, 24px); }
+.name { font-size: clamp(20px, 3vmin, 34px); font-weight: 600; }
+.points { font-size: clamp(90px, 30vmin, 280px); font-weight: 800; }
+.serve { font-size: clamp(15px, 2.2vmin, 24px); }
+.colon { font-size: clamp(48px, 12vmin, 140px); }
+.sets { font-size: clamp(18px, 3.4vmin, 32px); }
+.side-tag { font-size: clamp(14px, 2vmin, 22px); }
+.meta-strip { font-size: clamp(15px, 2.5vmin, 24px); font-weight: 600; }
+.chip { font-size: clamp(14px, 2.2vmin, 22px); }
+.pending { font-size: clamp(16px, 2.5vmin, 24px); }
+.recent { font-size: clamp(14px, 1.9vmin, 20px); }
+.demo button { padding: .55em 1em; font-size: clamp(13px, 1.8vmin, 18px); }
 
 @media (max-height: 700px) {
-  .points { font-size: clamp(56px, 24vmin, 180px); }
-  .name { font-size: clamp(12px, 2.2vmin, 20px); }
-  .colon { font-size: clamp(34px, 8vmin, 80px); }
-  .sets { font-size: clamp(12px, 2.2vmin, 18px); }
-  .serve { font-size: clamp(10px, 1.6vmin, 15px); }
-  .chip { font-size: clamp(10px, 1.6vmin, 15px); }
-  .pending { font-size: clamp(11px, 1.8vmin, 16px); }
+  .points { font-size: clamp(90px, 31vmin, 200px); }
+  .name { font-size: clamp(18px, 2.9vmin, 28px); }
+  .colon { font-size: clamp(40px, 10vmin, 100px); }
+  .sets { font-size: clamp(16px, 3.2vmin, 24px); }
+  .serve { font-size: clamp(13px, 2.1vmin, 20px); }
+  .chip { font-size: clamp(13px, 2vmin, 19px); }
+  .pending { font-size: clamp(14px, 2.3vmin, 20px); }
 }
 
 @media (max-height: 520px) {
-  .points { font-size: clamp(44px, 21vmin, 120px); }
-  .name { font-size: clamp(11px, 2vmin, 16px); }
+  .points { font-size: clamp(90px, 33vmin, 160px); }
+  .name { font-size: clamp(16px, 3.2vmin, 20px); }
   .colon { font-size: clamp(28px, 7vmin, 56px); }
-  .sets { font-size: clamp(11px, 2vmin, 15px); }
+  .sets { font-size: 14px; }
+  .serve { font-size: 14px; }
+  .side-tag { font-size: 13px; }
+  .meta-strip { font-size: 14px; }
+  .chip { font-size: 13px; }
   .demo { display: none; }
 }
 
@@ -331,14 +339,20 @@ body.compact .demo { display: none !important; }
     align-items: center;
     padding: 0 6vw;
   }
-  .player .name { grid-column: 1; grid-row: 1; align-self: start; margin: 5.5vh 0 0; }
-  .player .serve { grid-column: 1; grid-row: 2; justify-self: start; align-self: end; margin: 0 0 1.6vh; }
-  .player .points { grid-column: 2; grid-row: 1 / span 2; font-size: clamp(64px, 24vmin, 200px); }
+  .player .name {
+    grid-column: 1; grid-row: 1; align-self: start; margin: 5.5vh 0 0;
+    font-size: clamp(24px, 5.2vmin, 34px);
+  }
+  .player .serve {
+    grid-column: 1; grid-row: 2; justify-self: start; align-self: end;
+    margin: 0 0 1.6vh; font-size: clamp(16px, 3vmin, 24px);
+  }
+  .player .points { grid-column: 2; grid-row: 1 / span 2; font-size: clamp(100px, 34vmin, 240px); }
   .player .side-tag { top: 1.4vh; left: 4vw; }
   .center { flex-direction: row; gap: 1.6vw; min-width: 0; }
   .center .colon { font-size: clamp(26px, 7vmin, 70px); }
   .center .sets-caption { display: none; }
-  .center .sets { font-size: clamp(14px, 3vmin, 30px); }
+  .center .sets { font-size: clamp(18px, 3.8vmin, 32px); }
   .recent, .demo { display: none; }
   .flags { justify-content: flex-start; overflow-x: auto; }
 }
