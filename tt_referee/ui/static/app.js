@@ -80,11 +80,8 @@ function render(data) {
 
   const meta = $("meta-strip");
   if (meta) {
-    const serverSide = data.server === "A"
-      ? (data.side_of_a === "left" ? "左半台" : "右半台")
-      : (data.side_of_a === "left" ? "右半台" : "左半台");
-    meta.textContent = `第 ${data.set_index + 1} 局 · 局分 ${data.sets.A} : ${data.sets.B}` +
-      ` · 发球 ${data.players[data.server]}（${serverSide}）`;
+    meta.textContent = `第 ${data.set_index + 1} 局 · 局分 ${data.sets.A}:${data.sets.B}` +
+      ` · 发球 ${data.players[data.server]}`;
   }
 
   const flags = $("flags");
